@@ -1,10 +1,10 @@
-package ca.cal.tp1;
+package ca.cal.tp2;
 
 import java.sql.Date;
 import java.sql.SQLException;
 
-import ca.cal.tp1.Repository.AmendeRepositoryJDBC;
-import ca.cal.tp1.Service.ServiceEmprunteur;
+import ca.cal.tp2.Repository.AmendeRepositoryJDBC;
+import ca.cal.tp2.Service.ServiceEmprunteur;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, SQLException {

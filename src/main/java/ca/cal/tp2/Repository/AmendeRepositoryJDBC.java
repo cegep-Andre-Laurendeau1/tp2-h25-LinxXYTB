@@ -1,10 +1,10 @@
-package ca.cal.tp1.Repository;
+package ca.cal.tp2.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import ca.cal.tp1.Modele.Amende;
+import ca.cal.tp2.Modele.Amende;
 
 public class AmendeRepositoryJDBC extends RepositoryParentJDBC implements AmendeRepository {
 

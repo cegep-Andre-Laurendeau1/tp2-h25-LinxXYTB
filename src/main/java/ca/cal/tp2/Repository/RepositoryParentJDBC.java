@@ -1,4 +1,4 @@
-package ca.cal.tp1.Repository;
+package ca.cal.tp2.Repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

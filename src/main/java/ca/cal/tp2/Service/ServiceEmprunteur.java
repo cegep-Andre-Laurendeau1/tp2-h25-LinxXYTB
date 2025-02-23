@@ -1,9 +1,9 @@
-package ca.cal.tp1.Service;
+package ca.cal.tp2.Service;
 
 import java.sql.Date;
 
-import ca.cal.tp1.Modele.Amende;
-import ca.cal.tp1.Repository.AmendeRepositoryJDBC;
+import ca.cal.tp2.Modele.Amende;
+import ca.cal.tp2.Repository.AmendeRepositoryJDBC;
 
 public class ServiceEmprunteur {
     private final AmendeRepositoryJDBC amandeRepository;

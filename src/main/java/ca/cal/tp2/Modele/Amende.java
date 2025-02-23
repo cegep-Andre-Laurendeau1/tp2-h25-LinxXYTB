@@ -1,4 +1,4 @@
-package ca.cal.tp1.Modele;
+package ca.cal.tp2.Modele;
 
 import java.sql.Date;
 
