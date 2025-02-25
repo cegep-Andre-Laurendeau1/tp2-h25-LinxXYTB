@@ -1,14 +1,14 @@
 package ca.cal.tp2.Modele;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.Data;
 
 @Data
 public class EmpruntDetail {
     private final int lineItemID;
-    private final Date dateRetrourPrevu;
-    private final Date dateRetourActuelle;
+    private final LocalDate dateRetrourPrevu;
+    private final LocalDate dateRetourActuelle;
     private final String status;
 
     public boolean isEnRetard() {

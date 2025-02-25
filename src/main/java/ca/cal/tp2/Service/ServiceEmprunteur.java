@@ -1,18 +1,19 @@
 package ca.cal.tp2.Service;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import ca.cal.tp2.Modele.Amende;
+import ca.cal.tp2.Repository.AmendeRepository;
 import ca.cal.tp2.Repository.AmendeRepositoryJDBC;
 
 public class ServiceEmprunteur {
-    private final AmendeRepositoryJDBC amandeRepository;
+    private final AmendeRepository amandeRepository;
 
     public ServiceEmprunteur(AmendeRepositoryJDBC amandeRepository) {
         this.amandeRepository = amandeRepository;
     }
 
-    public void createAmande(int id, double montant, Date date, boolean paye) {
+    public void createAmande(int id, double montant, LocalDate date, boolean paye) {
         amandeRepository.save(new Amende(id, montant, date, paye));
     }
 

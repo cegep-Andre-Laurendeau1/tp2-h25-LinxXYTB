@@ -1,6 +1,6 @@
 package ca.cal.tp2.Modele;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
 public class Amende {
     private final int fineID;
     private final double montant;
-    private final Date dateCreation;
+    private final LocalDate dateCreation;
     private final boolean status;
     
     public void calculerAmende() {

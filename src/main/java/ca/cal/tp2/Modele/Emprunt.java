@@ -1,13 +1,13 @@
 package ca.cal.tp2.Modele;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.Data;
 
 @Data
 public class Emprunt {
     private final int borrowID;
-    private final Date dateEmprunt;
+    private final LocalDate dateEmprunt;
     private final boolean status;
 
     public void getItems() {
