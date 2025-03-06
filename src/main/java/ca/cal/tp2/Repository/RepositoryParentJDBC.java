@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public abstract class RepositoryParentJDBC {
     static final String JDBC_DRIVER = "org.h2.Driver";
-    static final String DB_URL = "jdbc:h2:mem:tp1;DB_CLOSE_DELAY=-1";
+    static final String DB_URL = "jdbc:h2:mem:tp2iulianmoraru;DB_CLOSE_DELAY=-1";
     static final String USER = "sa";
     static final String PASS = "";
     static Connection conn = null;
