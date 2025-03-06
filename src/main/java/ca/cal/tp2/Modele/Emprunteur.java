@@ -4,9 +4,6 @@ import java.util.List;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,20 +17,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Emprunteur extends Utilisateur {
-    @OneToMany
+    @OneToMany(mappedBy = "emprunteur")
     private List<Amende> amendes;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ID;
 
     public Emprunteur(String nom, String email, String phone, List<Amende> amendes) {
         super(nom, email, phone);
         this.amendes = amendes;
-    }
-
-    public Emprunteur(String nom, String email, String phone) {
-        super(nom, email, phone);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package ca.cal.tp2.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import ca.cal.tp2.BDException;
 import ca.cal.tp2.Modele.Amende;
@@ -20,8 +21,8 @@ public class ServiceEmprunteur {
             this.emprunteurRepository = emprunteurRepository;
         }
     
-        public void createAmande(int id, double montant, LocalDate date, boolean paye) {
-            amandeRepository.save(new Amende(id, montant, date, paye));
+        public void createAmande(int id, double montant, LocalDate date, boolean paye, EmprunteurDTO emprunteur) {
+            amandeRepository.save(new Amende(id, montant, date, paye, EmprunteurDTO.toModele(emprunteur)));
         }
     
         public AmendeDTO getAmende(int id) {
@@ -29,7 +30,7 @@ public class ServiceEmprunteur {
         }
     
         public void createEmprunteur( String nom, String email, String phone) {
-            emprunteurRepository.save(new Emprunteur(nom, email, phone));
+            emprunteurRepository.save(new Emprunteur(nom, email, phone, new ArrayList<Amende>()));
         }
 
         public EmprunteurDTO getEmprunteur(String nom) throws BDException {

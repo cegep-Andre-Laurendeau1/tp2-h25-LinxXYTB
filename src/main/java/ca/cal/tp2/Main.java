@@ -23,7 +23,11 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        ServiceEmprunteur.createAmande(1, 1.25, LocalDate.of(2025, 1, 1) , true);
+        try {
+            ServiceEmprunteur.createAmande(1, 1.25, LocalDate.of(2025, 1, 1) , true, ServiceEmprunteur.getEmprunteur("Iulian"));
+        } catch (BDException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println(ServiceEmprunteur.getAmende(1));
         Thread.currentThread().join();

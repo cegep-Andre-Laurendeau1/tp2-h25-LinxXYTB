@@ -25,7 +25,6 @@ public class EmprunteurRepositoryJPA extends RepositoryParentJPA implements Empr
             TypedQuery<Emprunteur> query = em.createQuery("SELECT e FROM Emprunteur e WHERE e.nom = :nom", Emprunteur.class);
             query.setParameter("nom", nom);
             Emprunteur emprunteur = query.getSingleResult();
-            // Initialize the amendes collection
             emprunteur.getAmendes().size();
             return emprunteur;
         } catch (Exception e) {

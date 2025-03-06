@@ -10,4 +10,8 @@ public record EmprunteurDTO(String nom, String email, String phone, List<Amende>
     public static EmprunteurDTO toDTO(Emprunteur emprunteur) {
         return new EmprunteurDTO(emprunteur.getNom(), emprunteur.getEmail(), emprunteur.getPhone(), emprunteur.getAmendes());
     }
+
+    public static Emprunteur toModele(EmprunteurDTO emprunteur) {
+        return new Emprunteur(emprunteur.nom(), emprunteur.email(), emprunteur.phone(), emprunteur.amendes());
+    }
 }

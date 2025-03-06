@@ -29,7 +29,7 @@ public class AmendeRepositoryJDBC extends RepositoryParentJDBC implements Amende
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                return new Amende(rs.getInt("fineid"), rs.getDouble("montant"), rs.getDate("dateCreation").toLocalDate(), rs.getBoolean("status"));
+                return new Amende(rs.getInt("fineid"), rs.getDouble("montant"), rs.getDate("dateCreation").toLocalDate(), rs.getBoolean("status"), null);
             }
         } catch (Exception e) {
             e.printStackTrace();

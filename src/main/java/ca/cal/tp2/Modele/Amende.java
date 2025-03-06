@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,8 @@ public class Amende {
     private double montant;
     private LocalDate dateCreation;
     private boolean status;
+    @ManyToOne
+    private Emprunteur emprunteur;
     
     public void calculerAmende() {
         System.out.println("Calculer amende");
