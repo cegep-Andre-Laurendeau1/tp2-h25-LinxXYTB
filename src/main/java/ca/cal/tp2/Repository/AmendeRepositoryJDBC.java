@@ -12,7 +12,7 @@ public class AmendeRepositoryJDBC extends RepositoryParentJDBC implements Amende
         String query = "INSERT INTO amende (fineid, montant, dateCreation, status) VALUES (?, ?, ?, ?)";
         Connection connection = super.conn;
         try(PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setInt(1, amende.getFineID());
+            preparedStatement.setInt(1, amende.getID());
             preparedStatement.setDouble(2, amende.getMontant());
             preparedStatement.setDate(3, java.sql.Date.valueOf(amende.getDateCreation()));
             preparedStatement.setBoolean(4, amende.isStatus());

@@ -2,6 +2,7 @@ package ca.cal.tp2.Modele;
 
 import java.util.List;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@DiscriminatorValue("Emprunteur")
 @Getter
 @Setter
 @NoArgsConstructor

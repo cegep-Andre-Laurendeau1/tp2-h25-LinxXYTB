@@ -25,7 +25,7 @@ public class Main {
 
         ServiceEmprunteur.createAmande(1, 1.25, LocalDate.of(2025, 1, 1) , true);
 
-        System.out.println(ServiceEmprunteur.get(1));
+        System.out.println(ServiceEmprunteur.getAmende(1));
         Thread.currentThread().join();
     }
 }

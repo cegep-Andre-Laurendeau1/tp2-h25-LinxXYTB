@@ -8,6 +8,7 @@ import ca.cal.tp2.Modele.Emprunteur;
 import ca.cal.tp2.Repository.AmendeRepository;
 import ca.cal.tp2.Repository.AmendeRepositoryJDBC;
 import ca.cal.tp2.Repository.EmprunteurRepository;
+import ca.cal.tp2.Service.DTO.AmendeDTO;
 import ca.cal.tp2.Service.DTO.EmprunteurDTO;
 
 public class ServiceEmprunteur {
@@ -23,8 +24,8 @@ public class ServiceEmprunteur {
             amandeRepository.save(new Amende(id, montant, date, paye));
         }
     
-        public Amende get(int id) {
-            return amandeRepository.getAmende(id);
+        public AmendeDTO getAmende(int id) {
+            return AmendeDTO.toDTO(amandeRepository.getAmende(id));
         }
     
         public void createEmprunteur( String nom, String email, String phone) {
