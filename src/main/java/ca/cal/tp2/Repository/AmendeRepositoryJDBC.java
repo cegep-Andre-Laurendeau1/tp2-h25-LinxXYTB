@@ -8,7 +8,6 @@ import ca.cal.tp2.Modele.Amende;
 
 public class AmendeRepositoryJDBC extends RepositoryParentJDBC implements AmendeRepository {
 
-
     public void save(Amende amende) {
         String query = "INSERT INTO amende (fineid, montant, dateCreation, status) VALUES (?, ?, ?, ?)";
         Connection connection = super.conn;
@@ -37,6 +36,4 @@ public class AmendeRepositoryJDBC extends RepositoryParentJDBC implements Amende
         }
         return null;
     }
-
-
 }

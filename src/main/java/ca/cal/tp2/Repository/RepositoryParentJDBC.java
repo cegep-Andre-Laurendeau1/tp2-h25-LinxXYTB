@@ -13,7 +13,6 @@ public abstract class RepositoryParentJDBC {
     static Connection conn = null;
 
     static {
-        // STEP 1: Register JDBC driver
         try {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);

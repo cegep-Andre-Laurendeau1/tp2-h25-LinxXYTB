@@ -2,14 +2,23 @@ package ca.cal.tp2.Modele;
 
 import java.time.LocalDate;
 
-import lombok.Data;
-
-@Data
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+@Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Amende {
-    private final int fineID;
-    private final double montant;
-    private final LocalDate dateCreation;
-    private final boolean status;
+    @Id
+    private int fineID;
+    private double montant;
+    private LocalDate dateCreation;
+    private boolean status;
     
     public void calculerAmende() {
         System.out.println("Calculer amende");

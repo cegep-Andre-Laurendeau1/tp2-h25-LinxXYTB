@@ -1,17 +1,24 @@
 package ca.cal.tp2.Modele;
 
-import lombok.Data;
-import lombok.experimental.SuperBuilder;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@SuperBuilder(toBuilder = true)
+@MappedSuperclass
+@Getter
+@Setter
+@NoArgsConstructor
 public abstract class Utilisateur {
-    private final int UserID;
-    private final String name;
-    private final String email;
-    private final String phoneNumber;
+    private String nom;
+    private String email;
+    private String phone;
 
-    public void login() {
-        System.out.println("Login");
+    public Utilisateur(String nom, String email, String phone) {
+        this.nom = nom;
+        this.email = email;
+        this.phone = phone;
     }
+
+    public abstract void login();
 }

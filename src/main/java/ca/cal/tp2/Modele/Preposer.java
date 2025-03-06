@@ -1,8 +1,5 @@
 package ca.cal.tp2.Modele;
 
-import lombok.experimental.SuperBuilder;
-
-@SuperBuilder(toBuilder = true)
 public class Preposer extends Utilisateur {
  
     @Override
