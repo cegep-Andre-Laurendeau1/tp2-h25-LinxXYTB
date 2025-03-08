@@ -8,7 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 
 @Entity
-@DiscriminatorValue("Livre")
+@DiscriminatorValue("DVD")
 @ToString(callSuper = true)@EqualsAndHashCode(callSuper = true)
 @SuperBuilder(toBuilder = true)
 public class DVD extends Document {
