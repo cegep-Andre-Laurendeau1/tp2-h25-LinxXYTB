@@ -3,6 +3,7 @@ package ca.cal.tp2.Modele;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,7 +24,7 @@ public class Amende {
     private double montant;
     private LocalDate dateCreation;
     private boolean status;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Emprunteur emprunteur;
     
     public void calculerAmende() {

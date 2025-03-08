@@ -1,5 +1,6 @@
 package ca.cal.tp2.Modele;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.DiscriminatorValue;
@@ -22,7 +23,7 @@ public class Emprunteur extends Utilisateur {
 
     public Emprunteur(String nom, String email, String phone, List<Amende> amendes) {
         super(nom, email, phone);
-        this.amendes = amendes;
+        this.amendes = (amendes == null) ? new ArrayList<>() : amendes;
     }
 
     @Override

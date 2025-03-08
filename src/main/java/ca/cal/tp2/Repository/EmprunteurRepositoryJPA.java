@@ -9,13 +9,13 @@ import jakarta.persistence.TypedQuery;
 public class EmprunteurRepositoryJPA extends RepositoryParentJPA implements EmprunteurRepository {
 
     @Override
-    public void save(Emprunteur emprunteur) {
+    public void save(Emprunteur emprunteur) throws BDException {
         try(EntityManager em = emf.createEntityManager()) {
         em.getTransaction().begin();
         em.persist(emprunteur);
         em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new BDException(e.getMessage());
         }
     }
 

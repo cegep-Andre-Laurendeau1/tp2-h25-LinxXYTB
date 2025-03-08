@@ -14,8 +14,11 @@ public class Main {
         TcpServer.startTcpServer();
 
         final ServiceEmprunteur ServiceEmprunteur = new ServiceEmprunteur(new AmendeRepositoryJDBC(), new EmprunteurRepositoryJPA());
-        
-        ServiceEmprunteur.createEmprunteur("Iulian", "iulianlebg@gmail.com", "514-114-7747");
+        try {
+            ServiceEmprunteur.createEmprunteur("Iulian", "iulianlebg@gmail.com", "514-114-7747");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             System.out.println(ServiceEmprunteur.getEmprunteur("Iulian"));

@@ -1,12 +1,15 @@
 package ca.cal.tp2.Modele;
 
-import lombok.Data;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+@Entity
+@DiscriminatorValue("Livre")
+@ToString(callSuper = true)@EqualsAndHashCode(callSuper = true)
 @SuperBuilder(toBuilder = true)
 public class DVD extends Document {
     

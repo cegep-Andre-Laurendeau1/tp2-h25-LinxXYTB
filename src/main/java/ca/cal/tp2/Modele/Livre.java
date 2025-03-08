@@ -1,16 +1,20 @@
 package ca.cal.tp2.Modele;
 
-import lombok.Data;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-@Data
+@Entity
+@DiscriminatorValue("Livre")
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder(toBuilder = true)
 public class Livre extends Document {
     
-    private final String ISBN;
-    private final String auteur;
-    private final String editeur;
-    private final int nombrePages;
+    private String ISBN;
+    private String auteur;
+    private String editeur;
+    private int nombrePages;
 }
