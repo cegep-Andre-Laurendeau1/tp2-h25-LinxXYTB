@@ -1,5 +1,14 @@
 package ca.cal.tp2.Modele;
 
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Getter
+@Setter
+@ToString(callSuper = true)
 public class Preposer extends Utilisateur {
  
     @Override

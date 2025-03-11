@@ -26,6 +26,7 @@ public class EmprunteurRepositoryJPA extends RepositoryParentJPA implements Empr
             query.setParameter("nom", nom);
             Emprunteur emprunteur = query.getSingleResult();
             emprunteur.getAmendes().size();
+            emprunteur.getEmprunts().size();
             return emprunteur;
         } catch (Exception e) {
             throw new BDException(e.getMessage());

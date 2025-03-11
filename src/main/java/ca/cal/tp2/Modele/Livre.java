@@ -1,5 +1,7 @@
 package ca.cal.tp2.Modele;
 
+import java.util.List;
+
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.EqualsAndHashCode;
@@ -16,7 +18,7 @@ import lombok.ToString;
 public class Livre extends Document {
 
     public Livre() {
-        super("", 0);
+        super("", 0, null);
     }
     
     private String ISBN;
@@ -24,8 +26,8 @@ public class Livre extends Document {
     private String editeur;
     private int nombrePages;
 
-    public Livre(String titre, int nombreExemplaires, String ISBN, String auteur, String editeur, int nombrePages) {
-        super(titre, nombreExemplaires);
+    public Livre(String titre, int nombreExemplaires, String ISBN, String auteur, String editeur, int nombrePages, List<EmpruntDetail> empruntDetails) {
+        super(titre, nombreExemplaires, empruntDetails);
         this.ISBN = ISBN;
         this.auteur = auteur;
         this.editeur = editeur;

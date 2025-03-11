@@ -1,5 +1,7 @@
 package ca.cal.tp2.Modele;
 
+import java.util.List;
+
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.EqualsAndHashCode;
@@ -19,11 +21,11 @@ public class DVD extends Document {
     private int duree;
 
     public DVD() {
-        super("", 0);
+        super("", 0, null);
     }
 
-    public DVD(String titre, int nombreExemplaires, String directeur, String rating, int duree) {
-        super(titre, nombreExemplaires);
+    public DVD(String titre, int nombreExemplaires, String directeur, String rating, int duree, List<EmpruntDetail> empruntDetails) {
+        super(titre, nombreExemplaires, empruntDetails);
         this.directeur = directeur;
         this.rating = rating;
         this.duree = duree;

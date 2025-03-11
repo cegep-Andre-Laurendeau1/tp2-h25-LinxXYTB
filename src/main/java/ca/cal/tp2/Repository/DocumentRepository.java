@@ -7,4 +7,6 @@ import ca.cal.tp2.Modele.Document;
 
 public interface DocumentRepository {
     List<Document> rechercheDocument(String string) throws BDException;
+
+    Document getDocument(String nom ) throws BDException;
 }

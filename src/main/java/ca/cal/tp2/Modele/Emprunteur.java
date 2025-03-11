@@ -2,7 +2,6 @@ package ca.cal.tp2.Modele;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -21,9 +20,13 @@ public class Emprunteur extends Utilisateur {
     @OneToMany(mappedBy = "emprunteur")
     private List<Amende> amendes;
 
-    public Emprunteur(String nom, String email, String phone, List<Amende> amendes) {
+    @OneToMany(mappedBy = "emprunteur")
+    private List<Emprunt> emprunts;
+
+    public Emprunteur(String nom, String email, String phone, List<Amende> amendes, List<Emprunt> emprunts) {
         super(nom, email, phone);
         this.amendes = (amendes == null) ? new ArrayList<>() : amendes;
+        this.emprunts = (emprunts == null) ? new ArrayList<>() : emprunts;
     }
 
     @Override

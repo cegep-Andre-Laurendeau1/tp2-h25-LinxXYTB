@@ -14,12 +14,30 @@ public class DocumentRepositoryJPA extends RepositoryParentJPA implements Docume
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             TypedQuery<Document> query = em.createQuery(
-                "SELECT d FROM Document d WHERE d.titre LIKE :title", 
+                "SELECT d FROM Document d WHERE LOWER(d.titre) LIKE LOWER(:title)", 
                 Document.class);
             query.setParameter("title", titre );
             List<Document> documents = query.getResultList();
+            documents.forEach(d -> d.getEmpruntDetails().size());
             em.getTransaction().commit();
             return documents;
+        } catch (Exception e) {
+            throw new BDException(e.getMessage());
+        }
+    }
+
+    @Override
+    public Document getDocument(String nom) throws BDException {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            TypedQuery<Document> query = em.createQuery(
+                "SELECT d FROM Document d WHERE LOWER(d.titre) = LOWER(:nom)", 
+                Document.class);
+            query.setParameter("nom", nom);
+            Document document = query.getSingleResult();
+            document.getEmpruntDetails().size();
+            em.getTransaction().commit();
+            return document;
         } catch (Exception e) {
             throw new BDException(e.getMessage());
         }
